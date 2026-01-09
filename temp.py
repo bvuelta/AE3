@@ -198,18 +198,7 @@ class PasswordGeneratorApp:
         # Mostrar la contraseña generada en un mensaje
         messagebox.showinfo("Contraseña Generada", 
                            f"Contraseña generada:\n{self.current_password}")
-        filename = self.save_filename.get().strip()
 
-        if not filename:
-            filename = "passwords.txt"
-            self.save_filename.set(filename)
-
-        if not os.path.exists(filename):
-            try:
-                with open(filename, 'w', encoding='utf-8') as file:
-                    file.write(self.current_password)
-            except Exception as e:
-                messagebox.showerror("Error", f"No se pudo crear el archivo:\n{str(e)}")
     
     def save_password(self):
         """Guarda la contraseña generada en un archivo"""
@@ -293,3 +282,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
